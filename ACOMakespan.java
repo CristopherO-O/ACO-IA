@@ -1,5 +1,3 @@
-
-package src.Algorithms;
 import java.util.List;
 
 public class ACOMakespan {
