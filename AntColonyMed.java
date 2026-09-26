@@ -4,8 +4,6 @@ import java.util.Random;
 
 public class AntColonyMed {
 	private final int[] processingTime;
-	// capacidade (velocidade) de cada máquina -> máquinas NÃO idênticas.
-	// Quanto maior a capacidade, mais rápido a máquina executa qualquer tarefa.
 	private final double[] machineCapacity;
 	private final int numMachines;
 	private final int numAnts;
@@ -41,7 +39,6 @@ public class AntColonyMed {
 		}
 	}
 
-	// ----- tempo real que a tarefa leva na máquina, dada a capacidade dela -----
 	// Modelo de máquinas uniformes (Q||Cmax): tempo = tempo_base / capacidade_da_maquina
 	private double runtimeOn(int task, int machine) {
 		return processingTime[task] / machineCapacity[machine];

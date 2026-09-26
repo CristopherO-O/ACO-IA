@@ -1,6 +1,6 @@
 import java.util.List;
 
-public class ACOMakespan {
+public class ACOFac {
 
     public static void main(String[] args) {
 
@@ -19,7 +19,7 @@ public class ACOMakespan {
         // PARÂMETROS DO ACO
         // ------------------------------------------------------------
         int numAnts = 30;          // uma formiga por tarefa
-        int numIterations = 200;
+        int numIterations = 300;
         double alpha = 1.0;        // peso do feromônio
         double beta = 2.0;         // peso da heurística (carga da máquina)
         double rho = 0.1;          // taxa de evaporação
@@ -85,12 +85,12 @@ public class ACOMakespan {
     }
 
     private static void saveHistoryCsv(List<Double> history) {
-        try (java.io.PrintWriter writer = new java.io.PrintWriter("convergencia.csv")) {
+        try (java.io.PrintWriter writer = new java.io.PrintWriter("convergencia_facil.csv")) {
             writer.println("iteracao,melhor_makespan");
             for (int i = 0; i < history.size(); i++) {
                 writer.printf("%d,%.4f%n", i + 1, history.get(i));
             }
-            System.out.println("\n[OK] Histórico de convergência salvo em convergencia.csv (para plotar o gráfico)");
+            System.out.println("\n[OK] Histórico de convergência salvo em convergencia_facil.csv (para plotar o gráfico)");
         } catch (Exception e) {
             System.out.println("Não foi possível salvar o CSV de convergência: " + e.getMessage());
         }
